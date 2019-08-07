@@ -7,6 +7,10 @@ public class Message {
 
     private String userName;
 
+    private String content;
+
+    private static Long numberOfUsers = 0l;
+
     private MessageType type;
 
     public enum MessageType {
@@ -31,6 +35,22 @@ public class Message {
 
     public void setuserName(String name) {
         this.userName = name;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public static Long getNumberOfUsers() {
+        return numberOfUsers;
+    }
+
+    public static void setNumberOfUsers(Long numberOfUsers) {
+        Message.numberOfUsers = numberOfUsers;
     }
 
     public MessageType getType() {
