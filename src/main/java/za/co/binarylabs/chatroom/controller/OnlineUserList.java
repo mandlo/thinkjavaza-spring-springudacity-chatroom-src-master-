@@ -14,13 +14,13 @@ import java.util.List;
 @Controller
 public class OnlineUserList {
 
-    @RequestMapping("/userlist")
+    @RequestMapping("/chat")
     public String list(Model model) {
-        List<User> userList = new ArrayList<>();
+        List<User> userList = new ArrayList<>(); //tried to use Map, but Session is abstract
         userList.add(new User("Tom"));
         userList.add(new User("Jerry"));
         userList.add(new User("Paul"));
-        model.addAttribute("userList", userList);
-        return "userList"; //userList.html
+        model.addAttribute("num", userList.size());
+        return "chat"; //chat.html
     }
 }
