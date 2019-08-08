@@ -4,9 +4,9 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
- * Created by prisca on 2019/08/06.
+ * Created by prisca on 2019/08/08.
  */
-public class User {
+public class User{
     @NotEmpty(message = "username cannot be empty")
     @NotNull
     private String userName;
@@ -22,4 +22,5 @@ public class User {
     public void setUserName(String userName) {
         this.userName = userName;
     }
+
 }

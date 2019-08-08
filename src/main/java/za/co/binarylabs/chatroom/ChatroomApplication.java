@@ -26,7 +26,7 @@ public class ChatroomApplication {
 	/**
 	 * Login Page
 	 */
-	@GetMapping("/")
+	@GetMapping("")
 	public ModelAndView login() {
 		return new ModelAndView("/login");
 	}
@@ -40,16 +40,9 @@ public class ChatroomApplication {
 		//TODO: add code for login to chatroom.
 		//NEED TO STUDY MORE HERE!!
 		ModelAndView mv = new ModelAndView("/chat");
-		String regex = "^[_A-Za-z0-9-]+(\\\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+" +
-				"(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,})$";
-
-		if(username == regex) {
-			msg.getContent();
-			msg.getUserName();
-
+		mv.addObject("userName", username);
            return mv;
-		}
-		return new ModelAndView("/login");
+		  }
 	}
 
-}
+

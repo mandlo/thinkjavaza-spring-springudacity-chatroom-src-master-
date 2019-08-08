@@ -115,13 +115,15 @@
 <body>
 <div class="logo_box">
     <h3>Chat Room</h3>
-    <form>
+    <form th:action="@{login/chat}">
         <div class="input_outer">
             <span class="u_user"></span>
             <input id="username" name="username" class="text" type="text" placeholder="Username">
+            <span th:text="${login.userName}"></span><br />
         </div>
         <div class="mb2">
             <a class="act-but submit" onclick="login()">Login</a>
+            <input type="button" value="login">
         </div>
     </form>
 </div>
@@ -132,15 +134,13 @@
      */
     function login() {
         // TODO: complete the login function
-        var regex = "prisca";
-        var username = document.getElementById("username");
-        var currentURL = document.getElementByClassName("act-but-submit");
-        //according to chat.html
-        var chatURL = "/";
-
-        if(username == regex) {
-        currentURL.href = "/";
-       } else { currentURL;}
+     var regex = "prisca";
+     var userName = document.getElementById("username").value;
+     if (userName == regex) {
+     document.getElementById("username").href = "login/chat";
+     }
+     else {
+     document.getElementById("userName").href="#login";
     }
     /**
      * Enter to login.
@@ -150,6 +150,7 @@
         e.keyCode === 13 && login();
     };
 </script>
+
 
 </body>
 </html>

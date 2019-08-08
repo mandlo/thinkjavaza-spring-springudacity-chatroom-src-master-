@@ -20,5 +20,4 @@ public class WebSocketConfig {
     public Message message() {
         return new Message();
     }
-
 }

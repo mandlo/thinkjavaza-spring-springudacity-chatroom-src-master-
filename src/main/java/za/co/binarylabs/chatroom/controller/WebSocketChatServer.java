@@ -48,7 +48,7 @@ public class WebSocketChatServer {
         onlineSessions.put(message.getUserName(), session);
 
         Message message = new Message();
-        message.setuserName(userName);
+        message.setUserName(userName);
     }
 
     /**
@@ -74,7 +74,7 @@ public class WebSocketChatServer {
         for(String key : keys) {
             if( key == session.getId()) {
              Session updateSession =  onlineSessions.get(key);
-                message.setuserName(updateSession.getId());
+                message.setUserName(updateSession.getId());
             }
         }
     }
