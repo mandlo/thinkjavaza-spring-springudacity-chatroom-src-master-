@@ -132,15 +132,8 @@
      */
     function login() {
         // TODO: complete the login function
-        var regex = "prisca";
-        var username = document.getElementById("username");
-        var currentURL = document.getElementByClassName("act-but-submit");
-        //according to chat.html
-        var chatURL = "/";
-
-        if(username == regex) {
-        currentURL.href = "/";
-       } else { currentURL;}
+        var username =/*[[${username}]]*/;
+        location.href = "index?username="+username;
     }
     /**
      * Enter to login.

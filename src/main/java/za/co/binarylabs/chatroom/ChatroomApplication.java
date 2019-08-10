@@ -26,7 +26,7 @@ public class ChatroomApplication {
 	/**
 	 * Login Page
 	 */
-	@GetMapping("")
+	@GetMapping
 	public ModelAndView login() {
 		return new ModelAndView("/login");
 	}
@@ -38,7 +38,9 @@ public class ChatroomApplication {
 	public ModelAndView index(String username, HttpServletRequest request)
 			throws UnknownHostException {
 		//TODO: add code for login to chatroom.
-		//NEED TO STUDY MORE HERE!!
+        //Comment from Reviewer - Here you could add your check test for anonymity.
+		//What do they mean by the comment?
+
 		ModelAndView mv = new ModelAndView("/chat");
 		mv.addObject("userName", username);
            return mv;
