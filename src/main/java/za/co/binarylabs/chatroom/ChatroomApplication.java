@@ -38,13 +38,15 @@ public class ChatroomApplication {
 	public ModelAndView index(String username, HttpServletRequest request)
 			throws UnknownHostException {
 		//TODO: add code for login to chatroom.
-        //Comment from Reviewer - Here you could add your check test for anonymity.
-		//What do they mean by the comment?
-
+		//Comment from Reviewer - Here you could add your check test for anonymity.
 		ModelAndView mv = new ModelAndView("/chat");
-		mv.addObject("userName", username);
-           return mv;
-		  }
+
+		if (request.getRemoteUser() != null) {
+			mv.addObject("userName", username);
+			return mv;
+		}
+		return null;
 	}
+}
 
 
