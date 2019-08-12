@@ -40,10 +40,12 @@ public class ChatroomApplication {
 		//TODO: add code for login to chatroom.
 		//Comment from Reviewer - Here you could add your check test for anonymity.
 		ModelAndView mv = new ModelAndView("/chat");
-
-		if (request.getRemoteUser() != null) {
-			mv.addObject("userName", username);
-			return mv;
+		if (request.getRequestURL() != null) {
+			if (request.getRemoteUser() != null) ;
+			{
+				mv.addObject("userName", username);
+				return mv;
+			}
 		}
 		return null;
 	}
