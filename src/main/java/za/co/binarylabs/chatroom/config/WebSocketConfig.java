@@ -13,8 +13,20 @@ import za.co.binarylabs.chatroom.model.Message;
  * Created by prisca on 2019/08/05.
  */
 @Configuration
-//@EnableWebSocketMessageBroker
-public class WebSocketConfig  {
+@EnableWebSocketMessageBroker
+public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
+
+    @Override
+    public void configureMessageBroker(MessageBrokerRegistry config) {
+        config.enableSimpleBroker("/topic");
+        config.setApplicationDestinationPrefixes("/app");
+    }
+
+    @Override
+    public void registerStompEndpoints(StompEndpointRegistry registry) {
+        registry.addEndpoint("/chat").withSockJS();
+    }
+
 
     @Bean
     public ServerEndpointExporter serverEndpointExporter() {

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import za.co.binarylabs.chatroom.model.Message;
 
 import java.util.ArrayList;
@@ -14,6 +15,7 @@ import java.util.List;
  * Created by prisca on 2019/08/07.
  */
 @Controller
+@ResponseBody
 public class MyTemplatesController {
 
     @Autowired
