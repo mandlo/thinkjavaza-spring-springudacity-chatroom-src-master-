@@ -3,11 +3,11 @@ package za.co.binarylabs.chatroom.model;
 /**
  * Created by prisca on 2019/08/13.
  */
-public class OutputMessage {
+public class MessageWrapper {
     private String user;
     private String content;
 
-    public OutputMessage(final String user, final String content) {
+    public MessageWrapper(final String user, final String content) {
         this.user = user;
         this.content = content;
     }
